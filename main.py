@@ -3,45 +3,394 @@ Módulo principal
 """
 
 import turtle
+import time
 
 from pacote.nucleo import carrega_img_fundo, carrega_personagens, fala
 
 # Do módulo menus, do pacote ______, import o menu_principal
 from pacote.menus import menu_principal
 
-def cena_demo():
-    """Cena de demonstração."""
-    turtle.setup(1080, 1350)
+
+def fala(texto, x, y):
+    turtle.penup()
+    turtle.goto(x,y)
+    turtle.pendown()
+    turtle.write(texto)
+
+def cena_goku_vegeta():
+    """
+    Goku encontra a última esfera do dragão, chama Vegeta e eles saem voando.
+    """
+    turtle.setup(1080, 608)
     carrega_img_fundo("bg-landscape.png")
 
-# Renomei a função seguindo o padrao <cena_descricao_breve_cena>
-def cena1():
-    """
-    Descrição da cena 1
-    """
-    pass
+    ball_4 = turtle.Turtle()
+    ball_4.shape('_lastdb.gif')
+    ball_4.up()
+    ball_4.goto(-33, -217)
 
-# Renomei a função seguindo o padrao <cena_descricao_breve_cena>
-def cena2():
-    """
-    Descrição da cena 2
-    """    
-    pass
+    goku = turtle.Turtle()
+    goku.shape('_goku_fly.gif')
+    goku.up()
+    goku.hideturtle()
+    goku.goto(530, -8)
+    goku.showturtle()
+    goku.goto(-104, -198)
+    goku.shape('_goku2.gif')
+    turtle.up()
+    turtle.goto(-180, -120)
+    turtle.color('white')
+    turtle.write("Achei,Vegeta!", font=('Arial', 12, 'bold'))
+    time.sleep(3)
+    turtle.clear()
 
-# Renomei a função seguindo o padrao <cena_descricao_breve_cena>
-def cena3():
-    """
-    Descrição da cena 3
-    """    
-    pass
+    
 
-# Renomei a função seguindo o padrao <cena_descricao_breve_cena>
-def cena4():
-    """
-    Descrição da cena 4
-    """    
-    pass
+    #Carregar personagem Vegeta
+    vegeta = turtle.Turtle()
+    vegeta.shape('_vegeta_fly.gif')
+    vegeta.up()
+    vegeta.hideturtle()
+    vegeta.goto(530, -11)
+    vegeta.showturtle()
+    vegeta.goto(45, -198)
+    vegeta.shape("_vegeta.gif")
+    turtle.up()
+    turtle.goto(-172, -121)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Vamos Vegeta, já achamos a última esféra!", font=('Arial', 12, 'bold'))
+    time.sleep(3)
+    turtle.clear()
+    
+    ball_4.hideturtle()
 
+    goku.shape('goku_fly_.gif')
+    goku.goto(530, -8)
+    goku.hideturtle()
+
+    turtle.up()
+    turtle.goto(51,-105)
+    turtle.color('white')
+    turtle.write("Finalmente achamos essas esferas malditas", font=('Arial', 12, 'bold'))
+    time.sleep(3)
+    turtle.clear()
+    vegeta.shape('vegeta_fly_.gif')
+    vegeta.goto(530, -11)
+    vegeta.hideturtle()
+
+def cena_goku_vegeta_voando():
+    """
+    Goku e Vegeta passam voando pelo Planeta Namekusei.
+    """
+    turtle.setup(1080, 608)
+    carrega_img_fundo("namekplanet.png")
+
+    goku = turtle.Turtle()         
+    goku.shape('goku_fly_.gif')
+    goku.penup()
+    goku.hideturtle()
+    goku.goto(-460, 24)
+    goku.showturtle()
+    goku.goto(540, -8)
+    goku.hideturtle()
+
+    vegeta = turtle.Turtle()
+    vegeta.shape('vegeta_fly_.gif')
+    vegeta.penup()
+    vegeta.hideturtle()
+    vegeta.goto(-460, 10)
+    vegeta.showturtle()
+    vegeta.goto(540, 0)
+    vegeta.hideturtle()
+
+def cena_shenlong():
+    """
+    Goku e Vegeta vão para a Corporação Cápsula para invocar o Shenlong. Eles o invocam e fazem um pedido, logo após se teleportam.
+    """
+    turtle.setup(1080, 608)
+    carrega_img_fundo("capsulecorp.png")
+
+    balls1 = turtle.Turtle()
+    balls1.shape('_db1.gif')
+    balls1.hideturtle()
+    balls1.penup()
+    balls1.speed(3)
+    balls1.goto(-174, -245)
+    balls1.showturtle()
+
+    goku = turtle.Turtle()         
+    goku.shape('goku_fly_.gif')
+    goku.penup()
+    goku.hideturtle()
+    goku.goto(-460, 24)
+    goku.showturtle()
+    goku.goto(-299, -201)
+    goku.shape('_goku2.gif')
+
+    vegeta = turtle.Turtle()         
+    vegeta.shape('vegeta_fly_.gif')
+    vegeta.penup()
+    vegeta.hideturtle()
+    vegeta.goto(-460, 24)
+    vegeta.showturtle()
+    vegeta.goto(-33, -201)
+    vegeta.shape('_vegeta.gif')
+    turtle.up()
+    turtle.goto(-43,-91)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Faça o pedido, Kakarotto!", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-327,-94)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Apareça Shenlong,", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-327,-94)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("e realize meu desejo!", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+
+    ball_4 = turtle.Turtle()
+    ball_4.speed(3)
+    ball_4.shape('_lastdb.gif')
+    ball_4.penup()
+    ball_4.hideturtle()
+    ball_4.goto(-299, -201)
+    time.sleep(0.7)
+    ball_4.showturtle()
+    ball_4.goto(-174, -245)
+    time.sleep(0.7)
+    ball_4.hideturtle()
+
+    balls1.speed(0.01)
+    balls1.goto(-174, -177)
+    time.sleep(0.3)
+    balls1.shape('_db3.gif')
+    balls1.speed(0.01)   
+    balls1.goto(-174, -127)
+    time.sleep(0.3)
+    balls1.shape('_db2.gif')
+    balls1.speed(0.01)
+    balls1.goto(-174, -73)
+    time.sleep(0.3)
+    balls1.shape('_db3.gif')
+    balls1.speed(0.01)   
+    balls1.goto(-174, -23)
+    time.sleep(0.3)
+    balls1.shape('_db4.gif')
+    balls1.speed(0.01)
+    balls1.goto(-174, 27)
+    time.sleep(0.3)
+    balls1.shape('_db5.gif')
+    balls1.speed(0.01)
+    balls1.goto(-174, 72)
+    time.sleep(0.3)
+    balls1.shape('_db6.gif')
+    balls1.speed(0.01)
+    balls1.goto(-174, 72)
+    time.sleep(0.7)
+    balls1.shape('_db7.gif')
+    balls1.speed(0.01)
+    balls1.goto(-174, 72)
+    balls1.shape('_db8.gif')
+    balls1.speed(0.01)
+    balls1.goto(-174, 72)
+    time.sleep(0.7)
+    balls1.hideturtle()
+
+    shenlong = turtle.Turtle()
+    shenlong.shape("shenlong_.gif")
+    shenlong.hideturtle()
+    shenlong.up()
+    shenlong.goto(-174, 72)
+    shenlong.showturtle()
+    turtle.up()
+    turtle.goto(-179,244)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Diga-me o seu desejo", font=('Arial', 12, 'bold'))
+    time.sleep(2)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-327,-94)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Quero fazer a fusão com o Vegeta", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-327,-94)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("sem os brincos Potara", font=('Arial', 12, 'bold'))
+    time.sleep(2.2)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-179,244)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Isso é muito fácil!", font=('Arial', 12, 'bold'))
+    time.sleep(2)
+    turtle.clear()
+    
+        
+    goku.penup()
+    goku.goto(-230, -195)
+    time.sleep(0.1)
+
+    vegeta.penup()
+    vegeta.goto(-156, -195)
+    time.sleep(0.1)
+
+    goku.hideturtle()
+    vegeta.hideturtle()
+
+    vegetto = turtle.Turtle()
+    vegetto.hideturtle()
+    vegetto.penup()
+    vegetto.goto(-175, -195)
+    vegetto.showturtle()
+    vegetto.shape('f1.gif')
+    time.sleep(0.2)
+    vegetto.shape('f2.gif')
+    time.sleep(0.2)    
+    vegetto.shape('f3.gif')
+    time.sleep(0.2)
+    vegetto.shape('f4.gif')
+    time.sleep(0.2)    
+    vegetto.shape('f5.gif')
+    time.sleep(0.2)
+    vegetto.shape('f6.gif')
+    time.sleep(0.2)
+    time.sleep(0.2)    
+    vegetto.shape('f7.gif')
+    time.sleep(0.4)
+    vegetto.shape('vegetto.gif')
+    time.sleep(0.2)
+    vegetto.hideturtle()
+    vegetto.penup()
+    vegetto.goto(-175, -195)
+    time.sleep(0.4)
+    vegetto.showturtle()
+    vegetto.goto(-175, -185)
+    time.sleep(0.4)
+    turtle.up()
+    turtle.goto(-123,-79)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Finalmente!!", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-123,-79)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Que poder incrível!", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-179,244)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Qual o seu segundo desejo?", font=('Arial', 12, 'bold'))
+    time.sleep(2)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-123,-79)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Faça o que bem entender", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-123,-79)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Só isso já basta", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    vegetto.shape('vegetto2.gif')
+    time.sleep(0.8)
+    vegetto.shape('vegetto3.gif')
+    time.sleep(0.3)
+    vegetto.shape('vegetto4.gif')
+    time.sleep(0.3)
+    vegetto.shape('vegetto5.gif')
+    vegetto.shape('vegetto6.gif')
+
+    vegetto.hideturtle()
+    vegetto.showturtle()
+
+def cena_vegetto_bills(): 
+    """
+    Vegetto se teleporta para o torneio do poder para enfrentar Bills. Bills se teleporta para enfrentá-lo e eles se preparam para a luta.
+    """
+    turtle.setup(1080, 608)
+    carrega_img_fundo("powertourna.png")
+
+    vegetto = turtle.Turtle()
+    vegetto.shape('vegetto3.2.gif')
+    vegetto.hideturtle()
+    vegetto.penup()
+    vegetto.goto(234, -195)
+    vegetto.showturtle()
+
+    bills = turtle.Turtle()
+    bills.hideturtle()
+    bills.penup()
+    bills.goto(-190, -195)
+    bills.showturtle()
+    bills.shape("aura1.gif")
+    time.sleep(0.35)
+    bills.shape("aura2.gif")
+    time.sleep(0.35)
+    bills.shape("aura3.gif")
+    time.sleep(0.35)
+    bills.shape("aura7.gif")
+    time.sleep(0.35)
+    bills.shape("aura8.gif")
+    time.sleep(0.35)
+    bills.shape("aura9.gif")
+    time.sleep(0.35)
+    bills.shape("aura10.gif")
+    time.sleep(0.35)
+    bills.shape("aura11.gif")
+    turtle.up()
+    turtle.goto(-162,-97)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Já estava na hora!", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(170,-95)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("A verdadadeira batalha começa agora!", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(-162,-97)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Não vou pegar leve", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
+    turtle.up()
+    turtle.goto(170, -95)
+    turtle.down()
+    turtle.color('white')
+    turtle.write("Vai sonhando que eu vou perder", font=('Arial', 12, 'bold'))
+    time.sleep(1.5)
+    turtle.clear()
 
 # Função principal
 def main():
@@ -53,13 +402,13 @@ def main():
     op = int(input(menu_principal))
     while op != 5:
         if op == 1:
-            cena1()
+            cena_goku_vegeta()
         elif op == 2:
-            cena2()
+            cena_goku_vegeta_voando()
         elif op == 3:
-            cena3()
+            cena_shenlong()
         elif op == 4:
-            cena4()
+            cena_vegetto_bills()
         else:
             print("Opção inválida.")
             
